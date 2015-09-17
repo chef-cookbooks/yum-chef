@@ -21,6 +21,20 @@ Only supports RHEL-family. May work on Fedora or Amazon Linux. Other platforms d
 
 The `attributes/default.rb` file contains comments with all the attributes that can be set to control how this cookbook sets up the repository.
 
+## Recipes
+
+### default
+
+Uses the attributes in `attributes/default.rb` to control how the repository is configured.
+
+### current
+
+Hard-codes Chef's public "current" repository. Used for situations where both stable and current repositories are desired.
+
+### stable
+
+Hard-codes Chef's public "stable" repository. Used for situations where both stable and current repositories are desired.
+
 ## License and Author
 
 - Author: Joshua Timberman <joshua@chef.io>
