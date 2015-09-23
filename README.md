@@ -7,15 +7,18 @@ Sets up the default yum package repository for Chef Software, Inc. products.
 
 Primarily intended to be consumed by the chef-ingredient cookbook
 
-## Requirements
+Requirements
+------------
+#### Platforms
+* RHEL/CentOS and derivatives
+* Fedora
 
-## Cookbooks
+#### Chef
+* Chef 11+
 
-- yum
+#### Cookbooks
+* yum version 3.2.0 or higher
 
-## Platform
-
-Only supports RHEL-family. May work on Fedora or Amazon Linux. Other platforms don't make sense with yum repositories. However, not all platforms that this cookbook will work on have supported packages from the repository. See [supported platforms](https://docs.chef.io/supported_platforms.html). Users may need to override attributes in roles or wrapper cookbooks to get this to work, or write their own cookbooks entirely.
 
 ## Attributes
 
@@ -37,10 +40,11 @@ Hard-codes Chef's public "stable" repository. Used for situations where both sta
 
 ## License and Author
 
-- Author: Joshua Timberman <joshua@chef.io>
-```text
-- Copyright (C) 2015, Chef Software Inc. <legal@chef.io>
 
+**Author:** Cookbook Engineering Team (<cookbooks@chef.io>)
+
+**Copyright:** 2011-2015, Chef Software, Inc.
+```
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
