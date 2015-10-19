@@ -5,7 +5,7 @@
 
 Sets up the default yum package repository for Chef Software, Inc. products.
 
-Primarily intended to be consumed by the chef-ingredient cookbook
+Primarily intended to be consumed by the [chef-ingredient cookbook](https://supermarket.chef.io/cookbooks/chef-ingredient).
 
 Requirements
 ------------
