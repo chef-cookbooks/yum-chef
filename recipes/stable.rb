@@ -20,7 +20,7 @@
 
 yum_repository 'chef-stable' do
   description 'Chef chef-stable repository'
-  baseurl "https://packagecloud.io/chef/stable/el/#{node['platform_version'].split('.').first}/$basearch"
+  baseurl node['yum-chef']['baseurl']
   gpgkey node['yum-chef']['gpgkey']
   sslcacert node['yum-chef']['sslcacert']
   proxy node['yum-chef']['proxy']
