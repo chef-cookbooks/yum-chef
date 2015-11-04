@@ -20,12 +20,10 @@
 
 yum_repository node['yum-chef']['repositoryid'] do
   description "Chef #{node['yum-chef']['repositoryid']} repository"
-  baseurl node['yum-chef']['baseurl']
-  gpgkey node['yum-chef']['gpgkey']
-  sslcacert node['yum-chef']['sslcacert']
-  proxy node['yum-chef']['proxy']
-  proxy_username node['yum-chef']['proxy_username']
-  proxy_password node['yum-chef']['proxy_password']
+  node['yum-chef'].each_pair do |opt, val|
+    next if opt == 'repositoryid'
+    send(opt.to_sym, val) unless val.nil?
+  end
   sslverify true
   gpgcheck true
   action :create
