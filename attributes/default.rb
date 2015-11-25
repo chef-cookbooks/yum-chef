@@ -43,4 +43,6 @@ node.default['yum-chef'].tap do |yum|
   yum['proxy']          = nil
   yum['proxy_username'] = nil
   yum['proxy_password'] = nil
+  yum['sslverify'] = true
+  yum['gpgcheck'] = true
 end

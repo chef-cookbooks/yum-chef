@@ -26,7 +26,7 @@ yum_repository 'chef-stable' do
   proxy node['yum-chef']['proxy']
   proxy_username node['yum-chef']['proxy_username']
   proxy_password node['yum-chef']['proxy_password']
-  sslverify true
-  gpgcheck true
+  sslverify node['yum-chef']['sslverify']
+  gpgcheck node['yum-chef']['gpgcheck']
   action :create
 end

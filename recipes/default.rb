@@ -24,7 +24,7 @@ yum_repository node['yum-chef']['repositoryid'] do
     next if opt == 'repositoryid'
     send(opt.to_sym, val) unless val.nil?
   end
-  sslverify true
-  gpgcheck true
+  sslverify node['yum-chef']['sslverify']
+  gpgcheck node['yum-chef']['gpgcheck']
   action :create
 end
