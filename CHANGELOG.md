@@ -1,6 +1,9 @@
 # yum-chef Cookbook CHANGELOG
 This file is used to list changes made in each version of the yum-chef cookbook.
 
+# v0.2.2 (2015-11-30)
+- [#7](https://github.com/chef-cookbooks/yum-chef/pull/7) Resolve Chef 13 deprecation warnings
+
 # v0.2.1 (2015-10-13)
 - [#4](https://github.com/chef-cookbooks/yum-chef/pull/4) Relax version constraint for yum
 
