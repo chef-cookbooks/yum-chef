@@ -1,1 +1,1 @@
-package 'chefdk'
+package 'chef-sync'
