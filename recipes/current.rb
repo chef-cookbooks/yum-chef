@@ -19,8 +19,8 @@
 #
 
 yum_repository 'chef-current' do
-  description 'Chef chef-current repository'
-  baseurl "https://packagecloud.io/chef/current/el/#{node['platform_version'].split('.').first}/$basearch"
+  description 'Chef Software Inc current channel'
+  baseurl 'https://packages.chef.io/current-yum/el/$releasever/$basearch'
   gpgkey node['yum-chef']['gpgkey']
   sslcacert node['yum-chef']['sslcacert']
   proxy node['yum-chef']['proxy']

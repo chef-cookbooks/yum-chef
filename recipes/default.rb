@@ -19,7 +19,7 @@
 #
 
 yum_repository node['yum-chef']['repositoryid'] do
-  description "Chef #{node['yum-chef']['repositoryid']} repository"
+  description "Chef Software Inc #{node['yum-chef']['repositoryid']} repository"
   node['yum-chef'].each_pair do |opt, val|
     next if opt == 'repositoryid'
     send(opt.to_sym, val) unless val.nil?

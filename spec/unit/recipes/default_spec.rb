@@ -38,7 +38,7 @@ describe 'yum-chef::default' do
     it 'renders the yum repository with defaults' do
       expect(chef_run).to create_yum_repository('chef-stable').with(
         repositoryid: 'chef-stable',
-        baseurl: 'https://packagecloud.io/chef/stable/el/7/$basearch'
+        baseurl: 'https://packages.chef.io/stable-yum/el/$releasever/$basearch'
       )
     end
   end
