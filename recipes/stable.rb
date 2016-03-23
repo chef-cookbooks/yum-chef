@@ -20,7 +20,7 @@
 
 yum_repository 'chef-stable' do
   description 'Chef Software Inc stable channel'
-  baseurl 'https://packages.chef.io/stable-yum/el/$releasever/$basearch'
+  baseurl "https://packages.chef.io/stable-yum/el/#{node['platform_version'].split('.').first}/$basearch"
   gpgkey node['yum-chef']['gpgkey']
   sslcacert node['yum-chef']['sslcacert']
   proxy node['yum-chef']['proxy']
