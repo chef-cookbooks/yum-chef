@@ -1,4 +1,5 @@
 # yum-chef
+
 [![Build Status](https://travis-ci.org/chef-cookbooks/yum-chef.svg?branch=master)](http://travis-ci.org/chef-cookbooks/yum-chef) [![Cookbook Version](https://img.shields.io/cookbook/v/yum-chef.svg)](https://supermarket.chef.io/cookbooks/yum-chef)
 
 Sets up the default yum package repository for Chef Software, Inc. products.
@@ -6,30 +7,40 @@ Sets up the default yum package repository for Chef Software, Inc. products.
 Primarily intended to be consumed by the [chef-ingredient cookbook](https://supermarket.chef.io/cookbooks/chef-ingredient).
 
 ## Requirements
+
 ### Platforms
+
 - RHEL/CentOS and derivatives
 - Fedora
 
 ### Chef
+
 - Chef 11+
 
 ### Cookbooks
+
 - yum version 3.2.0 or higher
 
 ## Attributes
+
 The `attributes/default.rb` file contains comments with all the attributes that can be set to control how this cookbook sets up the repository.
 
 ## Recipes
+
 ### default
+
 Uses the attributes in `attributes/default.rb` to control how the repository is configured.
 
 ### current
+
 Hard-codes Chef's public "current" repository. Used for situations where both stable and current repositories are desired.
 
 ### stable
+
 Hard-codes Chef's public "stable" repository. Used for situations where both stable and current repositories are desired.
 
 ## License & Authors
+
 **Author:** Cookbook Engineering Team ([cookbooks@chef.io](mailto:cookbooks@chef.io))
 
 **Copyright:** 2011-2016, Chef Software, Inc.
