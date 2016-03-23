@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the yum-chef cookbook.
 
+# v1.0.1 (2016-03-23)
+
+- PR #11 Avoid using $releasever as inconsistent usage in EL @afiune
+
 # v1.0.0 (2016-03-22)
 
 - Update to use the new packages.chef.io repository
