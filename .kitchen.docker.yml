@@ -1,26 +1,48 @@
-settings:
-  parallel: true
-
 driver:
-  name: docker
-  # privileged is required otherwise the container doesn't boot right
-  privileged: true
+  name: dokken
+  chef_version: latest
+  privileged: true # because Docker and SystemD/Upstart
+
+transport:
+  name: dokken
+
+provisioner:
+  name: dokken
+
+verifier:
+  name: inspec
 
 platforms:
+- name: centos-5
+  driver:
+    image: centos:5
+    platform: rhel
+    pid_one_command: /sbin/init
+    intermediate_instructions:
+      - RUN yum install -y which initscripts
+
 - name: centos-6
   driver:
     image: centos:6
     platform: rhel
-    run_command: /sbin/init
-    provision_command:
-      - /usr/bin/yum install -y initscripts net-tools wget
+    pid_one_command: /sbin/init
+    intermediate_instructions:
+      - RUN yum -y install which initscripts
+
 - name: centos-7
   driver:
     image: centos:7
     platform: rhel
-    run_command: /usr/lib/systemd/systemd
-    provision_command:
-      - /bin/yum install -y initscripts net-tools wget
+    pid_one_command: /usr/lib/systemd/systemd
+    intermediate_instructions:
+      - RUN yum -y install lsof which systemd-sysv initscripts
+
+- name: fedora-latest
+  driver:
+    image: fedora:latest
+    pid_one_command: /usr/lib/systemd/systemd
+    intermediate_instructions:
+      - RUN dnf -y install yum which systemd-sysv initscripts
 
 suites:
   - name: default

@@ -18,12 +18,16 @@
 node.default['yum-chef'].tap do |yum|
   # The name of the repository, the configuration will be written to
   # /etc/yum/repos.d/repositoryid.repo
-  yum['repositoryid']   = 'chef-stable'
+  yum['repositoryid'] = 'chef-stable'
 
   # The baseurl setting for the repository. This is calculated using the major
   # number part of the node's platform version. Must be a supported major version.
   # See https://docs.chef.io/supported_platforms.html
-  yum['baseurl']        = "https://packages.chef.io/stable-yum/el/#{node['platform_version'].split('.').first}/$basearch"
+  yum['baseurl'] = if platform?('amazon')
+                     'https://packages.chef.io/stable-yum/el/6/$basearch'
+                   else
+                     "https://packages.chef.io/stable-yum/el/#{node['platform_version'].split('.').first}/$basearch"
+                   end
 
   # Use the local copy of the Chef public GPG key if we're on a Chef Server.
   # This is to preserve compatibility with the `chef-server-ctl install` command.
