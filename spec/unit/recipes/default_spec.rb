@@ -42,4 +42,20 @@ describe 'yum-chef::default' do
       )
     end
   end
+
+  context 'amazon linux' do
+    let(:chef_run) do
+      ChefSpec::ServerRunner.new(
+        platform: 'amazon',
+        version: '2016.03'
+      ).converge(described_recipe)
+    end
+
+    it 'renders the yum repository with defaults' do
+      expect(chef_run).to create_yum_repository('chef-stable').with(
+        repositoryid: 'chef-stable',
+        baseurl: 'https://packages.chef.io/stable-yum/el/6/$basearch'
+      )
+    end
+  end
 end
