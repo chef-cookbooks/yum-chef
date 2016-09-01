@@ -4,7 +4,7 @@ describe 'yum-chef::default' do
   context 'cookbook attributes are set, on an unspecified platform' do
     let(:chef_run) do
       ChefSpec::ServerRunner.new do |node|
-        node.set['yum-chef'].tap do |yum|
+        node.normal['yum-chef'].tap do |yum|
           yum['repositoryid'] = 'chef-nightly'
           yum['baseurl'] = 'https://example.com/chef/nightly/5/$basearch'
           yum['gpgkey'] = 'https://example.com/package-public.key'
