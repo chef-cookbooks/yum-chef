@@ -15,7 +15,7 @@ Primarily intended to be consumed by the [chef-ingredient cookbook](https://supe
 
 ### Chef
 
-- Chef 11+
+- Chef 12+
 
 ### Cookbooks
 

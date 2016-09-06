@@ -11,7 +11,7 @@ depends 'yum', '>= 3.2'
   supports os
 end
 
-source_url 'https://github.com/chef-cookbooks/yum-chef' if respond_to?(:source_url)
-issues_url 'https://github.com/chef-cookbooks/yum-chef/issues' if respond_to?(:issues_url)
+source_url 'https://github.com/chef-cookbooks/yum-chef'
+issues_url 'https://github.com/chef-cookbooks/yum-chef/issues'
 
-chef_version '>= 11.0' if respond_to?(:chef_version)
+chef_version '>= 12'
