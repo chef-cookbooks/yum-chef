@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of the yum-chef cookbook.
 
+## 2.0.0 (2016-09-06)
+- Add inspec testing
+- Update testing framework
+- Add support for Amazon Linux
+- Remove support for Chef 11
+
 # v1.0.1 (2016-03-23)
 
 - PR #11 Avoid using $releasever as inconsistent usage in EL @afiune
