@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the yum-chef cookbook.
 
+## 2.0.1 (2016-09-06)
+- Allow running the yum 4.0 cookbook
+
 ## 2.0.0 (2016-09-06)
 - Add inspec testing
 - Update testing framework
