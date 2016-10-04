@@ -15,11 +15,11 @@ Primarily intended to be consumed by the [chef-ingredient cookbook](https://supe
 
 ### Chef
 
-- Chef 12+
+- Chef 12.1+
 
 ### Cookbooks
 
-- yum version 3.2.0 or higher
+- compat_resource
 
 ## Attributes
 
