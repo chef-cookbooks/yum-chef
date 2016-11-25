@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the yum-chef cookbook.
 
+## 3.0.0 (2016-11-25)
+- Replace yum dependency with compat_resource
+
 ## 2.0.1 (2016-09-06)
 - Allow running the yum 4.0 cookbook
 
