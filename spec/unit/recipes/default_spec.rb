@@ -1,10 +1,13 @@
 require 'spec_helper'
 
 describe 'yum-chef::default' do
-  context 'cookbook attributes are set, on an unspecified platform' do
+  context 'cookbook attributes are overriden on centos 6' do
     let(:chef_run) do
-      ChefSpec::ServerRunner.new do |node|
-        node.normal['yum-chef'].tap do |yum|
+      ChefSpec::SoloRunner.new(
+        platform: 'centos',
+        version: '6.8'
+      ) do |node|
+        node.override['yum-chef'].tap do |yum|
           yum['repositoryid'] = 'chef-nightly'
           yum['baseurl'] = 'https://example.com/chef/nightly/5/$basearch'
           yum['gpgkey'] = 'https://example.com/package-public.key'
@@ -27,11 +30,11 @@ describe 'yum-chef::default' do
     end
   end
 
-  context 'centos-7.0' do
+  context 'cookbook attributes are default on centos-7.0' do
     let(:chef_run) do
-      ChefSpec::ServerRunner.new(
+      ChefSpec::SoloRunner.new(
         platform: 'centos',
-        version: '7.0'
+        version: '7.3.1611'
       ).converge(described_recipe)
     end
 
@@ -43,9 +46,9 @@ describe 'yum-chef::default' do
     end
   end
 
-  context 'amazon linux' do
+  context 'cookbook attributes are default on amazon linux' do
     let(:chef_run) do
-      ChefSpec::ServerRunner.new(
+      ChefSpec::SoloRunner.new(
         platform: 'amazon',
         version: '2016.03'
       ).converge(described_recipe)
