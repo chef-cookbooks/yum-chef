@@ -15,11 +15,11 @@ Primarily intended to be consumed by the [chef-ingredient cookbook](https://supe
 
 ### Chef
 
-- Chef 12.1+
+- Chef 12.14+
 
 ### Cookbooks
 
-- compat_resource
+- none
 
 ## Attributes
 
