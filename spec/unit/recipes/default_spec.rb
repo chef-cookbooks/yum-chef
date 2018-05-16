@@ -5,7 +5,7 @@ describe 'yum-chef::default' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new(
         platform: 'centos',
-        version: '6.8'
+        version: '6.9'
       ) do |node|
         node.override['yum-chef'].tap do |yum|
           yum['repositoryid'] = 'chef-nightly'
