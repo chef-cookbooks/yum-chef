@@ -1,6 +1,6 @@
 #
 # Author:: Joshua Timberman <joshua@chef.io>
-# Copyright:: 2015-2017, Chef Software, Inc. <legal@chef.io>
+# Copyright:: 2015-2019, Chef Software, Inc. <legal@chef.io>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ node.default['yum-chef'].tap do |yum|
   yum['baseurl'] = if platform?('amazon')
                      'https://packages.chef.io/stable-yum/el/6/$basearch'
                    else
-                     "https://packages.chef.io/stable-yum/el/#{node['platform_version'].split('.').first}/$basearch"
+                     "https://packages.chef.io/stable-yum/el/#{node['platform_version'].to_i}/$basearch"
                    end
 
   # Use the local copy of the Chef public GPG key if we're on a Chef Server.

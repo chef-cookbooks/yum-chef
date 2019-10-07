@@ -3,7 +3,7 @@
 # Recipe:: current
 #
 # Author:: Joshua Timberman <joshua@chef.io>
-# Copyright:: 2015-2017, Chef Software, Inc. <legal@chef.io>
+# Copyright:: 2015-2019, Chef Software, Inc. <legal@chef.io>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@
 
 yum_repository 'chef-current' do
   description 'Chef Software Inc current channel'
-  baseurl "https://packages.chef.io/current-yum/el/#{node['platform_version'].split('.').first}/$basearch"
+  baseurl "https://packages.chef.io/current-yum/el/#{node['platform_version'].to_i}/$basearch"
   gpgkey node['yum-chef']['gpgkey']
   sslcacert node['yum-chef']['sslcacert']
   proxy node['yum-chef']['proxy']
