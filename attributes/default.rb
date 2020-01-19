@@ -29,7 +29,7 @@ node.default['yum-chef'].tap do |yum|
                      "https://packages.chef.io/stable-yum/el/#{node['platform_version'].to_i}/$basearch"
                    end
 
-  # Use the local copy of the Chef public GPG key if we're on a Chef Server.
+  # Use the local copy of the Chef Software public GPG key if we're on a Chef Infra Server.
   # This is to preserve compatibility with the `chef-server-ctl install` command.
   # Otherwise, retrieve the public key from Chef's downloads page.
   yum['gpgkey']         = if File.exist?('/opt/opscode/embedded/keys/packages-chef-io-public.key')

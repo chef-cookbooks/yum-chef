@@ -1,6 +1,6 @@
 # yum-chef
 
-[![Build Status](https://travis-ci.org/chef-cookbooks/yum-chef.svg?branch=master)](http://travis-ci.org/chef-cookbooks/yum-chef) [![Cookbook Version](https://img.shields.io/cookbook/v/yum-chef.svg)](https://supermarket.chef.io/cookbooks/yum-chef)
+[![Cookbook Version](https://img.shields.io/cookbook/v/yum-chef.svg)](https://supermarket.chef.io/cookbooks/yum-chef)
 
 Sets up the default yum package repository for Chef Software, Inc. products.
 
