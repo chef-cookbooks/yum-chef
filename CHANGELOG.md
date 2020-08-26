@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the yum-chef cookbook.
 
+## Unreleased
+
+- resolved cookstyle error: spec/unit/recipes/default_spec.rb:6:7 warning: `ChefDeprecations/DeprecatedChefSpecPlatform`
+
 ## 4.0.0 (2018-02-16)
 
 - Require Chef 12.14+ and remove compat_resource dep
